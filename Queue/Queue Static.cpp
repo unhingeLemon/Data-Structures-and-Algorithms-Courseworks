@@ -46,7 +46,8 @@ void IntQueue::enqueue(int num){
 		cout << "The queue is full.\n";
 	else{
 		// Calculate the new rear position
-		rear = (rear + 1) % queueSize;
+		rear = rear + 1;
+		cout << rear << "r" << endl;
 		// Insert new item
 		queueArray[rear] = num;
 		// Update item count
@@ -64,7 +65,7 @@ void IntQueue::dequeue(int &num){
 		cout << "The queue is empty.\n";
 	else{
 		// Move front
-		front = (front + 1) % queueSize;
+		front = front + 1;
 		// Retrieve the front item
 		num = queueArray[front];
 		// Update item count
@@ -109,14 +110,14 @@ void IntQueue::clear(){
 }
 
 int main(){
-	IntQueue iQueue(5);
+	IntQueue iQueue(10);
 	cout << "Enqueuing 5 items...\n";
 	// Enqueue 5 items.
-	for (int x = 0; x < 5; x++)
+	for (int x = 0; x < 10; x++)
 		iQueue.enqueue(x);
 	// Attempt to enqueue a 6th item.
 	cout << "Now attempting to enqueue again...\n";
-	iQueue.enqueue(5);
+	iQueue.enqueue(10);
 	
 	// Deqeue and retrieve all items in the queue
 	cout << "The values in the queue were:\n";
