@@ -1,61 +1,17 @@
 #include <iostream>
-#include <queue>
+#include <ifstream>
+#include <string>
+
 using namespace std;
-int main()
+
+ifstream file("file.txt");
+if (file.is_open())
 {
-int x;
-queue<int> iQueue;
-cout << "I will now enqueue items...\n";
-for (x = 2; x < 50; x += 2)
-{
-cout << "Pushing " << x << endl;
-iQueue.push(x);
+	string line;
+	while (getline(file, line))
+    {
+    	// note that the newline character is not included
+        // in the getline() function
+    	cout << line << endl;
+    }
 }
-cout << "I will now dequeue items...\n";
-for (x = 2; x < 50; x += 2)
-{
-cout << "Popping " << iQueue.front() << endl;
-iQueue.pop();
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//int prime(int n, int i =1);
-//
-//int main() {
-//	int num;
-//	cout << "Enter a positive number:";
-//	cin >> num;
-//	if(prime(num)==2)
-//		cout << "prime" << endl;
-//	else
-//		cout << "not prime" << endl;
-//	system("pause");
-//}
-
-//int prime(int n, int i){
-//	if(i==n)
-//		return i;
-//	else if(n%i == 0)
-//		return (1 + prime(n,i+1));
-//	
-//}
-//
-
