@@ -167,11 +167,14 @@ void IntBinaryTree::destroySubTree(TreeNode *root) {
 int main(){
 	IntBinaryTree tree;
 	cout << "Inserting nodes. ";
-	tree.insertNode(5);
-	tree.insertNode(8);
+	tree.insertNode(11);
+	tree.insertNode(6);
 	tree.insertNode(3);
-	tree.insertNode(12);
-	tree.insertNode(9);
+	tree.insertNode(7);
+	tree.insertNode(33);
+	tree.insertNode(32);
+	tree.insertNode(53);
+	tree.insertNode(21);
 	cout << "Done.\n";
 	cout << "Inorder traversal:\n";
 	tree.showNodesInOrder();
